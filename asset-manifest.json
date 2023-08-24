@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ETH-Dapp/static/css/main.03ada238.css",
+    "main.js": "/ETH-Dapp/static/js/main.100f6991.js",
+    "index.html": "/ETH-Dapp/index.html",
+    "main.03ada238.css.map": "/ETH-Dapp/static/css/main.03ada238.css.map",
+    "main.100f6991.js.map": "/ETH-Dapp/static/js/main.100f6991.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03ada238.css",
+    "static/js/main.100f6991.js"
+  ]
+}
