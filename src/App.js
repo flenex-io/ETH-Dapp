@@ -12,7 +12,7 @@ const App = () => {
         const connectedAccounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         setAccounts(connectedAccounts);
         setAddress(connectedAccounts[0]);
-        fetchBalance(connectedAccounts[0]);
+        getBal(connectedAccounts[0]);
       } catch (err) {
         console.error('Connection error:', err);
       }
@@ -21,14 +21,16 @@ const App = () => {
     }
   };
 
-  const fetchBalance = async (connectedAccount) => {
-    try {
-      const balance = await window.ethereum.request({ method: 'eth_getBalance', params: [String(connectedAccount), 'latest'] });
-      const balanceInEther = parseFloat(balance) / 1e18;
-      setBalance(balanceInEther.toFixed(2));
-    } catch (error) {
-      console.error('Error fetching balance:', error);
-    }
+  const getBal = (connectedAccount) => {
+    window.ethereum.request({ method: 'eth_getBalance', params: [String(connectedAccount), 'latest'] })
+      .then(balance => {
+        const balanceInWei = parseInt(balance, 16);
+        const balanceInEther = balanceInWei / 1e18;
+        const formattedBalance = balanceInEther.toFixed(2);
+        setBalance(formattedBalance);
+      }).catch(error => {
+        console.error('Error fetching balance:', error);
+      });
   };
 
   const disconnectWallet = () => {
@@ -79,7 +81,7 @@ const App = () => {
           setAccounts(connectedAccounts);
           if (connectedAccounts.length > 0) {
             setAddress(connectedAccounts[0]);
-            fetchBalance(connectedAccounts[0]);
+            getBal(connectedAccounts[0]);
           }
         } catch (err) {
           console.error('Connection error:', err);
