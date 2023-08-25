@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ETH-Dapp/static/css/main.56f42d1b.css",
-    "main.js": "/ETH-Dapp/static/js/main.327a4a83.js",
+    "main.js": "/ETH-Dapp/static/js/main.70f298a7.js",
     "index.html": "/ETH-Dapp/index.html",
     "main.56f42d1b.css.map": "/ETH-Dapp/static/css/main.56f42d1b.css.map",
-    "main.327a4a83.js.map": "/ETH-Dapp/static/js/main.327a4a83.js.map"
+    "main.70f298a7.js.map": "/ETH-Dapp/static/js/main.70f298a7.js.map"
   },
   "entrypoints": [
     "static/css/main.56f42d1b.css",
-    "static/js/main.327a4a83.js"
+    "static/js/main.70f298a7.js"
   ]
 }
