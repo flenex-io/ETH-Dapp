@@ -17,7 +17,7 @@ Follow these steps to set up and run the ETH-DAPP locally on your machine:
 ### Installation
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-username/eth-dapp.git
+   git clone https://github.com/flenex-io/ETH-Dapp.git
 
 2. cd eth-dapp
 
