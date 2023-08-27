@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
   const [address, setAddress] = useState('');
   const [accounts, setAccounts] = useState([]);
-  const [balance, setBalance] = useState('0');
+  const [balance, setBalance] = useState(0);
 
   const fetchBalance = async (connectedAccount) => {
     try {
