@@ -95,3 +95,18 @@ input[type='submit'] {
 input[type='submit']:hover {
   background-color: #4a8acf;
 }
+
+input[type='number'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type='number']:focus {
+  outline: none;
+  border-color: #6db3f2;
+  box-shadow: 0px 0px 8px rgba(109, 179, 242, 0.5);
+}
