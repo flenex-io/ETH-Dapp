@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
 
@@ -8,6 +9,24 @@ const App = () => {
   const [accounts, setAccounts] = useState([]);
   const [balance, setBalance] = useState(0);
 
+  useEffect(() => {
+    const checkConnection = async () => {
+      if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined') {
+        try {
+          const connectedAccounts = await window.ethereum.request({ method: 'eth_accounts' });
+          setAccounts(connectedAccounts);
+          if (connectedAccounts.length > 0) {
+            setAddress(connectedAccounts[0]);
+            fetchBalance(connectedAccounts[0]);
+          }
+        } catch (err) {
+          showError('Connection error:', err);
+        }
+      }
+    };
+    checkConnection();
+  }, []);
+
   const fetchBalance = async (connectedAccount) => {
     try {
       const provider = new Web3(window.ethereum);
@@ -15,10 +34,13 @@ const App = () => {
       const balanceInEther = provider.utils.fromWei(balanceWei, 'ether');
       setBalance(parseFloat(balanceInEther).toFixed(2));
     } catch (error) {
-      alert('Error fetching balance:', error);
+      showError('Error fetching balance:', error);
     }
   };
 
+  const showError = (message, error) => {
+    alert(`${message}\n${error.message || error}`);
+  };
 
   const connectWallet = async () => {
     try {
