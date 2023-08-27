@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Web3 from 'web3'; // Make sure to import Web3
+import Web3 from 'web3';
 
 import './App.css';
 
