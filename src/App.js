@@ -68,40 +68,41 @@ const App = () => {
   };
 
   const handleSendETH = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      if (!window.ethereum) {
-        alert('MetaMask not detected');
-        return;
-      }
-
-      const provider = new Web3(window.ethereum);
-      const accounts = await provider.eth.getAccounts();
-
-      if (accounts.length === 0) {
-        alert('No connected accounts found');
-        return;
-      }
-
-      const from = accounts[0];
-      const recipientAddress = e.target.to_address.value;
-      const amount = e.target.amount.value;
-
-      await provider.eth.sendTransaction({
-        from,
-        to: recipientAddress,
-        value: provider.utils.toWei(amount, 'ether'),
-        gasPrice: provider.utils.toWei('10', 'gwei'),
-        gas: '21000',
-      });
-
-      alert('Transaction sent successfully');
-      fetchBalance(from);
-    } catch (error) {
-      alert('Error sending transaction:', error);
+  try {
+    if (!window.ethereum) {
+      alert('MetaMask not detected');
+      return;
     }
-  };
+
+    const provider = new Web3(window.ethereum);
+    const accounts = await provider.eth.getAccounts();
+
+    if (accounts.length === 0) {
+      alert('No connected accounts found');
+      return;
+    }
+
+    const from = accounts[0];
+    const recipientAddress = e.target.to_address.value;
+    const amount = e.target.amount.value.toString();
+
+    await provider.eth.sendTransaction({
+      from,
+      to: recipientAddress,
+      value: provider.utils.toWei(amount, 'ether'),
+      gasPrice: provider.utils.toWei('10', 'gwei'),
+      gas: '21000',
+    });
+
+    alert('Transaction sent successfully');
+    fetchBalance(from);
+  } catch (error) {
+    alert('Error sending transaction:', error);
+  }
+};
+
 
   useEffect(() => {
     const checkConnection = async () => {
