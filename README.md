@@ -17,18 +17,11 @@ Follow these steps to set up and run the ETH-DAPP locally on your machine:
    ```sh
    git clone https://github.com/flenex-io/ETH-Dapp.git
 
-   ```
-
 2. ```sh
    cd eth-dapp
-
-   ```
 
 3. ```sh
    npm install
 
-   ```
-
-4. ```sh npm start
-
-   ```
+4. ```sh
+   npm start
