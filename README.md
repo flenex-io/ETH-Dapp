@@ -29,4 +29,5 @@ Follow these steps to set up and run the ETH-DAPP locally on your machine:
 
 4. Run the project
 
-   ```sh npm start
+   ```sh
+    npm start
