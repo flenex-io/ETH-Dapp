@@ -1,6 +1,6 @@
 # ETH-DAPP
 
-Welcome to ETH-DAPP, my first-ever decentralized application!
+ETH-DAPP, my first-ever decentralized application!
 
 ## Introduction
 
