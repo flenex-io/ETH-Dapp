@@ -10,8 +10,6 @@ ETH-DAPP is a beginner-friendly project that showcases the basics of creating an
 
 Follow these steps to set up and run the ETH-DAPP locally on your machine:
 
-### Installation
-
 1. Clone this repository:
 
    ```sh
