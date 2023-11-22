@@ -18,7 +18,7 @@ Follow these steps to set up and run the ETH-DAPP locally on your machine:
 2. Change the repository
 
    ```sh
-   cd eth-dapp
+   cd ETH-Dapp
 
 3. Install the dependencies
 
