@@ -29,3 +29,5 @@ Follow these steps to set up and run the ETH-DAPP locally on your machine:
 
    ```sh
     npm start
+
+## Open For Contributions
